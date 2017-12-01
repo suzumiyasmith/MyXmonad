@@ -36,6 +36,12 @@ import           Data.Monoid
 -- random
 import           System.Random
 
+-----------------
+-- Application --
+-----------------
+
+myDefaultBrowser = "waterfox"
+
 ------------
 -- Basics --
 ------------
@@ -70,7 +76,7 @@ transparentHook = fadeInactiveLogHook fadeAmount
 -- KeyBindings --
 -----------------
 myKeys =
-  [ ("M-f"   , spawn "firefox")  -- Firefox
+  [ ("M-f"   , spawn myDefaultBrowser)  -- launch DefaultBrowser
   , ("M-x"   , spawn "xfce4-taskmanager") -- tasX
   , ("M-z"   , spawn "alacritty") -- hyperterm
   , ("M-p"   , spawn "xfce4-popup-whiskermenu") -- windows menu
@@ -139,7 +145,7 @@ appManageHooks = mconcat [ matchAny v --> a | (v,a) <- myActions]
       , ("conky"                          , doIgnore)
       , ("MPlayer"                        , doFloat)
       , ("mpv"                            , doFloat)
-      , ("Firefox"                        , doShift "2")
+      , (myDefaultBrowser                 , doShift "2")
       , ("Atom"                           , doShift "3")
       , ("Oracle VM VirtualBox Manager"   , doShift "8")
       , ("VirtualBox"                     , doShift "9")
