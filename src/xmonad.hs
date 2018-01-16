@@ -145,7 +145,7 @@ appManageHooks = mconcat [ matchAny v --> a | (v,a) <- myActions]
       , ("conky"                          , doIgnore)
       , ("MPlayer"                        , doFloat)
       , ("mpv"                            , doFloat)
-      , (myDefaultBrowser                 , doShift "2")
+      , ("Waterfox"                       , doShift "2")
       , ("Atom"                           , doShift "3")
       , ("Oracle VM VirtualBox Manager"   , doShift "8")
       , ("VirtualBox"                     , doShift "9")
