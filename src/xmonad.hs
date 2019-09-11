@@ -40,7 +40,7 @@ import           System.Random
 -- Application --
 -----------------
 
-myDefaultBrowser = "waterfox"
+myDefaultBrowser = "firefox"
 
 ------------
 -- Basics --
@@ -145,7 +145,7 @@ appManageHooks = mconcat [ matchAny v --> a | (v,a) <- myActions]
       , ("conky"                          , doIgnore)
       , ("MPlayer"                        , doFloat)
       , ("mpv"                            , doFloat)
-      , ("Waterfox"                       , doShift "2")
+      , ("firefox"                        , doShift "2")
       , ("Atom"                           , doShift "3")
       , ("Oracle VM VirtualBox Manager"   , doShift "8")
       , ("VirtualBox"                     , doShift "9")
@@ -207,7 +207,6 @@ avoidMaster :: W.StackSet i l a s sd -> W.StackSet i l a s sd
 avoidMaster = W.modify' $ \c -> case c of
     W.Stack t [] (r:rs) -> W.Stack t [r] rs
     _                   -> c
-
 
 ----------
 -- Main --
